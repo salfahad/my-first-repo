@@ -131,3 +131,53 @@ Starting instance i-00316ee24b0a1cf88
 }
 Starting instance i-049c5fc6fb16ca81d
 [ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ 
+
+##create_terminate_EC2 _using_while_loop
+ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ sh create_terminate_EC2\ _using_while_loop.sh
+Launched instance i-0ac5d9075ab028ec0. Waiting for 60 seconds...
+{
+    "TerminatingInstances": [
+        {
+            "CurrentState": {
+                "Code": 32,
+                "Name": "shutting-down"
+            },
+            "InstanceId": "i-0ac5d9075ab028ec0",
+            "PreviousState": {
+                "Code": 16,
+                "Name": "running"
+            }
+        }
+    ]
+}
+Terminated instance i-0ac5d9075ab028ec0.
+[ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ 
+
+####Example: Monitor S3 Bucket Size Using until Loop
+[ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ sh monitor_S3_bucket_size_using_until_loop.sh 
+Bucket size is below threshold. Checking again in 10 seconds...
+
+##Monitor S3 Bucket Size
+[ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ sh monitor_S3_bucket_size_using_until_loop.sh 
+Bucket size is within limits. Current size: 11395 bytes
+
+##Example: Enable Versioning on S3 Buckets Using case Statement
+
+[ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ sh enable_versioning_S3_using_case_statement.sh 
+Versioning is not enabled on my-new-bucket-fullofpotato. Enabling versioning...
+[ec2-user@ip-172-31-60-84 control-flow-in-shell-scripting]$ 
+
+##Useful AWS CLI Commands for Practice##
+ec2-user@ip-172-31-60-84 additional_aws_CLI_practice]$ sh create_S3_bucket_and_upload_file.sh 
+make_bucket: my-new-bucket-mr.patato
+upload: ./my_test_file.txt to s3://my-new-bucket-mr.patato/my_test_file.txt
+File my_test_file.txt uploaded to bucket my-new-bucket-mr.patato.
+[ec2-user@ip-172-31-60-84 additional_aws_CLI_practice]
+
+##Describe EC2 Instances in a Specific Region
+
+
+##Monitor S3 Bucket Size
+[ec2-user@ip-172-31-60-84 additional_aws_CLI_practice]$ sh monitor_S3_bucket_size.sh 
+Bucket size is within limits. Current size: 0 bytes
+[ec2-user@ip-172-31-60-84 additional_aws_CLI_practice]$ 
