@@ -1,5 +1,3 @@
-##Updating Resources without Replacement (UpdatePolicy)
-
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
   MyAutoScalingGroup:
