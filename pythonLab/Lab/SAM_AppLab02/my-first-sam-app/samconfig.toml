@@ -3,7 +3,7 @@
 version = 0.1
 
 [default.global.parameters]
-stack_name = "y-first-sam-app."
+stack_name = "my-first-sam-app"
 
 [default.build.parameters]
 parallel = true
