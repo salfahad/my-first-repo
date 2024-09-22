@@ -9,7 +9,8 @@ def send_slack_message(message):
     slack_webhook_url = os.environ['SLACK_WEBHOOK_URL']
     slack_data = {
         "text": message
-    }
+    :
+
 
     headers = {
         'Content-Type': 'application/json'
@@ -27,10 +28,10 @@ def lambda_handler(event, context):
     # Debugging: Print the event (you can remove this in production)
     print("Received event: " + json.dumps(event, indent=2))
 
-    # Parse the CloudWatch Alarm event
-    alarm_name = event['detail']['alarmName']
-    state = event['detail']['state']['value']
-    reason = event['detail']['state']['reason']
+    # Parse the CloudWatch Alarm evecnt
+    alarm_name = event['alarmData']['alarmName']
+    state = event['alarmData']['state']['value']
+    reason = event['alarmData']['state']['reason']
 
     # Construct the message to be sent to Slack
     slack_message = (
